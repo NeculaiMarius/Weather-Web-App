@@ -1,0 +1,60 @@
+body{
+    height: 100vh;
+    margin: 0;
+
+    overflow: hidden;
+
+    animation: mymove 3s forwards;
+}
+
+.cloud4,.cloud5,.cloud2,.cloud1{
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
+    width: auto;    
+}
+
+.cloud4{
+    top: -20%;
+    left: -10%;
+    animation: slideInFromTop 2s forwards;
+}
+
+.cloud5{
+    right: -10%;
+    bottom: -20%;
+    animation: slideInFromTop 7s forwards;
+}
+
+.cloud2{
+    z-index: -2;
+    top: -25%;
+    left: -10%;
+    animation: slideInFromTop 8s forwards;
+}
+
+.cloud1{
+    bottom: -30%;
+    left: -15%;
+    animation: slideInFromTop 5s forwards;
+}
+
+
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes mymove {
+    from {background-color: rgb(107, 212, 247);}
+    to {background-color: rgb(184, 184, 184);}
+}
+
+
+

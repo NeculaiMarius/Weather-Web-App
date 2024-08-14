@@ -1,0 +1,137 @@
+:root{
+    --skyColor: #7a8daf;
+    --lightning: rgb(255, 255, 255);
+}
+
+body{
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+
+    background: var(--skyColor);
+    animation: flash-animation 8s linear infinite;
+}
+
+.rain{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.flash {
+    animation: flash-animation 0.2s linear;
+}
+
+.raindrop {
+    position: absolute;
+    width: 2px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    bottom: 100%;
+
+    animation: appear 4s forwards;
+    animation:fall linear infinite;
+    animation-delay: 2s;
+    filter: blur(1px);
+
+    z-index: -2;
+}
+
+
+
+.rain::before, .rain::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rainAnim linear infinite;
+}
+
+
+
+.rain::before {
+    animation-duration: 0.5s;
+}
+
+.rain::after {
+    animation-duration: 0.7s;
+    opacity: 0.5;
+}
+
+
+.cloud1, .cloud2{
+    position: absolute;
+    filter: brightness(80%);
+    z-index: -1;
+
+    width: 90vw;
+
+
+    top: -15vw;
+}
+
+.cloud1{
+    left: -20%;
+    animation: slideInFromTop 3s forwards;
+}
+
+.cloud2{
+    right: -20%;
+    top: -20vw;
+    animation: slideInFromTop 5S forwards;
+}
+
+
+
+
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes flash-animation {
+    0%, 89%, 100% {
+        background: var(--skyColor); /* Fundalul întunecat */
+    }
+    90%,93% {
+        background:var(--lightning); /* Fulger */
+    }
+    94%,95%{
+        background: var(--skyColor);
+    }
+    96%,98%{
+        background: var(--lightning); /* Fulger */
+    }
+}
+
+
+
+@keyframes rainAnim {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .cloud1,.cloud2{
+        top: -25vh;
+
+        height: 70vh;
+        width: auto;
+    }
+}

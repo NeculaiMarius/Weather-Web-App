@@ -1,0 +1,80 @@
+body{
+    background-color: rgb(168, 171, 185);
+
+}
+
+.snow{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.snowflake {
+    position: absolute;
+    color: white; 
+    bottom: 100%;
+    animation: fall linear infinite;
+    z-index: -2;
+    opacity: 0.8;
+}
+
+
+
+
+
+.snowman{
+    position:absolute;
+    height: 70vh;
+    bottom: -5%;
+    left: -10vh;
+    z-index: -1;
+}
+
+
+#snowball {
+    width: 300px;
+    height: 200px;
+    background-image: url("/static/images/snowball.png"); /* Imaginea bulgărelui de zăpadă */
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    z-index: -1;
+}
+
+
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0.5;
+    }
+}
+
+
+
+@keyframes moveTopLeftToBottomRight {
+    from { left: -100%; top: -100%; }
+    to { left: 100%; top: 100%; }
+}
+
+@keyframes moveTopRightToBottomLeft {
+    from { left: 100%; top: -100px; }
+    to { left: -100%; top: 100%; }
+}
+
+@keyframes moveBottomLeftToTopRight {
+    from { left: -100%; top: 100%; }
+    to { left: 100%; top: -100%; }
+}
+
+@keyframes moveBottomRightToTopLeft {
+    from { left: 100%; top: 100%; }
+    to { left: -100%; top: -100%; }
+}
+

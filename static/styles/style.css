@@ -1,3 +1,148 @@
 body{
-    background-color: rebeccapurple;
+    background-color: rgb(5, 120, 158);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.cloud1,.cloud2,.cloud3,.sun{
+    position: absolute;
+}
+
+.cloud1{
+    height: 400px;
+    width: auto;
+    z-index: -2;
+    animation:  slideInFromLeft 2s forwards;
+    left: -200px;
+}
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%); /* începe în afara ecranului din stânga */
+    }
+    to {
+        transform: translateX(0); /* ajunge la poziția finală */
+    }
+}
+
+.cloud2{
+    height: 400px;
+    width: auto;
+    z-index: -1;
+    animation: slideInFromLeft 6s forwards;
+
+    top: 60%;
+}
+@keyframes slideInFromRight{
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+.cloud3{
+    height: 600px;
+    width: auto;
+    z-index: -1;
+    animation: slideInFromRight 3s forwards;
+    right: -200px;
+    top: 20%;
+}
+
+.sun{
+    z-index: -2;
+    height: 500px ;
+    right: -150px;
+    top: 25%;
+
+    animation:slideInFromRight 3s forwards,moveUp 2s 2s forwards;
+}
+@keyframes moveUp{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateY(-50%);
+    }
+}
+
+
+.title-section{
+    background-color: rgba(37, 37, 37, 0.33);
+    color: whitesmoke;
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    margin:2rem 0;
+}
+
+.title{
+    font-weight: 800;
+    font-size: 3rem;
+    padding: 0 2rem;
+}
+
+.subtitle{
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.input-section{
+    display: flex;
+    flex-direction: column;
+
+    min-width: fit-content;
+    max-width: 50%;
+    background-color: whitesmoke;
+
+    padding: 2rem;
+    border-radius: 10px;
+
+    align-items: center;
+    margin: auto;
+}
+
+.input-text{
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 0 0 2rem 0;
+    display: flex;
+}
+
+#city{
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-style: none;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#form-button{
+    border-style: none;
+    border-radius: 8px;
+
+    background-color: rgb(23, 23, 23);
+    color: whitesmoke;
+
+    font-weight: 700;
+    height: 3rem;
+
+    margin-top: 2rem;
+
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+    html{
+        font-size: 12px;
+    }
 }

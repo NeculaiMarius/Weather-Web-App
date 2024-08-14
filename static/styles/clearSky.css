@@ -1,0 +1,71 @@
+body{
+    background: linear-gradient(to top, #a1e6f8, #68c6e9,#228bd1);
+    height: 100vh;
+    margin: 0;
+}
+
+.cloud1,.cloud2,.cloud3{
+    position: absolute;
+    z-index: -1;
+}
+
+.cloud1{
+    top: -30%;
+    right: -25%;
+    animation: slideOutToRight 5s forwards;
+}
+
+.cloud2{
+    right: -25%;
+    bottom: -50%;
+    animation: slideOutToRight 10s forwards;
+}
+
+.cloud3{
+    left: -25%;
+    animation: slideOutToRight 7s forwards;
+}
+
+
+
+.sun{
+    position: absolute;
+    height: 30vw;
+    z-index: -2;
+    animation: slideInFromBottom 4s forwards;
+
+}
+
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(300%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+@keyframes slideOutToRight{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(100%);
+    }
+} 
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    .sun{
+        height: 50vw;
+        left: -10%;
+    }
+}
+
+

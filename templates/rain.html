@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} Weather</title>
+    <link href="{{url_for('static', filename='/static/styles/resultsPage.css')}}" rel="stylesheet" />
+    <link href="{{url_for('static', filename='/static/styles/rain.css')}}" rel="stylesheet" />
+
+
+    <!-- For the live server -->
+    <link rel="stylesheet" href="/static/styles/resultsPage.css">
+    <link rel="stylesheet" href="/static/styles/rain.css">
+
+    <script src="/static/scripts/rain.js"></script>
+</head>
+
+<body>
+    <div class="rain">
+        <img class="cloud1" src="/static/images/cloud1.png" alt="">
+        <img class="cloud2" src="/static/images/cloud2.png" alt="">
+
+        <div class="city-name-section">
+            <h1 class="city-name">{{ title }} Weather</h1>
+        </div>    
+        
+        
+        <div class="info-section">
+            <p class="info">{{ status }} and {{ temp }} &deg;</p>
+            <p class="info">Feels like {{ feels_like }}</p>
+        </div>
+    
+        
+        <div class="form-section">
+            <form action="/weather ">
+                <input type="text" name="city" id="city" placeholder="Enter another city" />
+                <button type="submit" id="form-button">Get info</button>
+            </form>
+        </div>
+        
+    </div>
+
+</body>
+</html>
