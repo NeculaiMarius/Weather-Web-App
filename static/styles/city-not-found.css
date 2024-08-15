@@ -1,0 +1,9 @@
+body{
+    background: linear-gradient(rgb(228, 228, 228),rgb(87, 87, 87), rgb(67, 67, 67));
+    height: 100vh;
+    margin: 0;
+}
+
+#city{
+    border: solid 5px rgb(169, 3, 3);
+}
