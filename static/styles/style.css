@@ -5,6 +5,10 @@ body{
     margin: 0;
     height: 100vh;
     overflow: hidden;
+    
+
+    position: relative;
+    z-index: -10;
 }
 
 .wrapper {
@@ -88,6 +92,7 @@ body{
     flex-direction: column;
 
     margin:2rem 0;
+    z-index: 1;
 }
 
 .title{
@@ -102,6 +107,9 @@ body{
 }
 
 .input-section{
+    z-index: 2;
+    position: relative;
+
     display: flex;
     flex-direction: column;
 
@@ -115,6 +123,8 @@ body{
     align-items: center;
     margin: auto;
 }
+
+
 
 .input-text{
     font-weight: 400;

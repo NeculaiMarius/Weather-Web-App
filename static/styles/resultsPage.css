@@ -7,15 +7,16 @@ body{
 
     width: 100%;
     height: 100%;
-    clip: auto;
+
+    position: relative;
+    z-index: -10;
 }
 
 .wrapper {
     position: relative;
     width: 100%;
     height: 100%;
-    z-index: -10;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .city-name-section{
