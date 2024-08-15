@@ -14,28 +14,31 @@
 </head>
 
 <body>
-    <img class="cloud4" src="/static/images/cloud4.png" alt="">
-    <img class="cloud5" src="/static/images/cloud5.png" alt="">
-    <img class="cloud2" src="/static/images/cloud2.png" alt="">
-    <img class="cloud1" src="/static/images/cloud1.png" alt="">
-
-    <div class="city-name-section">
-        <h1 class="city-name">{{ title }} Weather</h1>
-    </div>    
+    <div class="wrapper">
+        <img class="cloud4" src="/static/images/cloud4.png" alt="">
+        <img class="cloud5" src="/static/images/cloud5.png" alt="">
+        <img class="cloud2" src="/static/images/cloud2.png" alt="">
+        <img class="cloud1" src="/static/images/cloud1.png" alt="">
     
+        <div class="city-name-section">
+            <h1 class="city-name">{{ title }} Weather</h1>
+        </div>    
+        
+        
+        <div class="info-section">
+            <p class="info">{{ status }} and {{ temp }} &deg;</p>
+            <p class="info">Feels like {{ feels_like }}</p>
+        </div>
     
-    <div class="info-section">
-        <p class="info">{{ status }} and {{ temp }} &deg;</p>
-        <p class="info">Feels like {{ feels_like }}</p>
+        
+        <div class="form-section">
+            <form action="/weather ">
+                <input type="text" name="city" id="city" placeholder="Enter another city" />
+                <button type="submit" id="form-button">Get info</button>
+            </form>
+        </div>
     </div>
-
     
-    <div class="form-section">
-        <form action="/weather ">
-            <input type="text" name="city" id="city" placeholder="Enter another city" />
-            <button type="submit" id="form-button">Get info</button>
-        </form>
-    </div>
     
 </body>
 </html>
